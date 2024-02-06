@@ -1,0 +1,28 @@
+We have to return the index where the given no x can be adjusted inside the array .
+EX if arr = [1,2,3,4,7] and x  = 6 we can insert 6 at index 4 after the index 3 where there is 4.
+
+// Code for this is:-  
+
+public class Solution {
+    public static int searchInsert(int [] arr, int x){
+        // Write your code here.
+        int low = 0;
+        int high  =arr.length-1;
+        int ans  = arr.length;
+
+        while(low<=high){
+            int mid = low + (high-low)/2;
+
+            if(arr[mid]>=x){
+                ans = mid;
+                high = mid-1;
+            }else 
+                  low = mid+1;
+        }
+       return ans;
+    }
+}
+
+
+
+
